@@ -1,8 +1,11 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import FirstComponent from '../components/Notes/FirstComponent.vue' //  Cela importe le composant Component  depuis le fichier Component .vue. Ce composant sera utilisé dans le template. 
-import EventButton from '../components/Notes/EventButton.vue'
-import BindingForm from '../components/Notes/BindingsForm.vue'
-import Vfor from '../components/Notes/Vfor.vue'
+import { createRouter,  createWebHistory } from 'vue-router';
+import FirstComponent from '../components/Notes/FirstComponent.vue';
+import EventButton from '../components/Notes/EventButton.vue';
+import BindingForm from '../components/Notes/BindingsForm.vue';
+import Vfor from '../components/Notes/Vfor.vue';
+import UserList from '../views/users.vue'; 
+
+
 
 const routes = [
   {
@@ -25,11 +28,16 @@ const routes = [
     name: 'v-for',
     component: Vfor
   },
-]
+  {
+    path: '/users',
+    name: 'user',
+    component: UserList 
+  },
+];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
-export default router
+export default router;
