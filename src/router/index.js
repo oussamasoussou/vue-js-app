@@ -1,20 +1,30 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import FirstComponent from '../components/Notes/FirstComponent.vue' //  Cela importe le composant Component  depuis le fichier Component .vue. Ce composant sera utilisé dans le template. 
+import EventButton from '../components/Notes/EventButton.vue'
+import BindingForm from '../components/Notes/BindingsForm.vue'
+import Vfor from '../components/Notes/Vfor.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/first-component',
+    name: 'firstComponent',
+    component: FirstComponent
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/event-button',
+    name: 'eventButton',
+    component: EventButton
+  },
+  {
+    path: '/binding-form',
+    name: 'bindding-form',
+    component: BindingForm
+  },
+  {
+    path: '/v-for',
+    name: 'v-for',
+    component: Vfor
+  },
 ]
 
 const router = createRouter({
